@@ -1,0 +1,295 @@
+/* 
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Montserrat Alternates', sans-serif; */
+marquee {
+    position: fixed;
+    z-index: 200;
+    width: 100%;
+    padding: 4px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #000;
+    bottom: 0;
+}
+
+:root {
+    --firework-size-pos: 38px;
+    --firework-size-neg: -53px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: hsl(51, 98%, 80%);
+    overflow: hidden;
+}
+
+.main-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: large;
+    color: #262626;
+    z-index: 40;
+}
+
+.wish {
+    margin-bottom: 16px;
+    font-size: 3.5rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+.rangoli img {
+    width: 40%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -20%;
+    margin: auto;
+    transform-origin: 50% 50%;
+    animation: rotate 15s linear infinite;
+    z-index: 100;
+}
+
+.right-rangoli img {
+    left: 80%;
+    animation-name: anti-rotate;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes anti-rotate {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.rocket img {
+    position: absolute;
+    width: 120px;
+    z-index: 10;
+    transform: rotate(30deg);
+    animation: r-up ease-in 3s;
+}
+
+#rocket-1 img {
+    bottom: -20%;
+    left: 10%;
+}
+
+#rocket-2 img {
+    bottom: -20%;
+    right: 10%;
+    transform: rotate(-30deg);
+    animation-name: l-up;
+}
+
+@keyframes r-up {
+    0% {
+        bottom: -20%;
+        left: 10%;
+        transform: rotate(30deg) scale(1);
+    }
+
+    100% {
+        bottom: 120%;
+        left: 80%;
+        transform: rotate(30deg) scale(.6);
+    }
+}
+
+@keyframes l-up {
+    0% {
+        bottom: -20%;
+        right: 10%;
+        transform: rotate(-30deg) scale(1);
+    }
+
+    100% {
+        bottom: 120%;
+        right: 80%;
+        transform: rotate(-30deg) scale(.6);
+    }
+}
+
+.firework {
+    display: block;
+    background: transparent;
+    position: fixed;
+    width: 80px;
+    height: 80px;
+}
+
+.firework span {
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: none 1.4s ease infinite;
+    opacity: 0;
+    animation-delay: 3s;
+}
+
+.firework span:nth-child(1) {
+    animation-name: f0;
+}
+
+@keyframes f0 {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, var(--firework-size-neg));
+        opacity: 0;
+    }
+}
+
+.firework span:nth-child(2) {
+    animation-name: f45;
+}
+
+@keyframes f45 {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--firework-size-pos), 0);
+        opacity: 0;
+    }
+}
+
+
+.firework span:nth-child(3) {
+    animation-name: f90;
+}
+
+@keyframes f90 {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, var(--firework-size-pos));
+        opacity: 0;
+    }
+}
+
+.firework span:nth-child(4) {
+    animation-name: f-45;
+}
+
+@keyframes f-45 {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--firework-size-neg), 0);
+        opacity: 0;
+    }
+}
+
+
+.firework-set {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    top: 150px;
+    left: 100px;
+    margin-top: 20px;
+}
+
+.firework-set .firework:nth-child(2) {
+    margin-top: 10px;
+    transform: rotate(45deg);
+    margin-left: 40px;
+}
+
+.firework-set .firework:nth-child(3) {
+    margin-top: -10px;
+    transform: rotate(60deg);
+    margin-left: 80px;
+}
+
+.f1 {
+    top: 20px;
+    left: 10%;
+}
+
+.f2 {
+    top: -10px;
+    left: 20%;
+}
+
+.f2 span {
+    background-color: lightgreen;
+}
+
+.f3 {
+    top: 20px;
+    left: 30%;
+}
+
+.f4 {
+    top: 20px;
+    left: 60%;
+}
+
+.f5 {
+    top: -10px;
+    left: 70%;
+}
+
+.f5 span {
+    background-color: tomato;
+}
+
+.f6 {
+    top: 20px;
+    left: 80%;
+}
+
+.c1 {
+    top: 50%;
+    left: 50%;
+}
+
+.c2 {
+    top: 40%;
+    left: 40%;
+}
+
+.c3 {
+    top: 40%;
+    left: 50%;
+}
